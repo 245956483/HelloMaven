@@ -1,12 +1,4 @@
-FROM fishead/docker-tomcat-maven:latest
-
-RUN mkdir /app
-
-COPY . /app/
-
-WORKDIR /app
-
-RUN mvn clean package -Dmaven.test.skip=true
+FROM tomcat
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
